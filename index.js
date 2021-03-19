@@ -245,9 +245,15 @@ Example born in 1901 and died in 1959 - included -- born in 1889 and died in 192
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(array){
-
+  let newArray = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i]["years"] >= "1900" && array[i]["years"] <= "2000"){
+      newArray.push(array[i]);
+    }
+    return newArray; 
+  }
 }
-
+console.log(get20s(artists));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -282,9 +288,17 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/){
-    /*Your Code Here*/
+function addArtist(array){
+   array.push({ 
+    id: 20,
+    name: "Joseph Witzke", 
+    years: "1984 - 19th",
+    genre: "Web Design", 
+    nationality: "American",
+    bio: "Aspiring web devloper."});
+  return array;
   }
+  console.log(addArtist(artists));
 
   
 
@@ -295,9 +309,16 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(array){
+  let newArray = [];
+  for (let i = 0; i < array.length; i++){
+    if (array[i].paintings > 100){
+    newArray.push(array[i].name);
+  }
+  }
+  return newArray;
 }
+console.log(lotsOfArt(artists));
 
 
 
